@@ -1,73 +1,50 @@
-# React + TypeScript + Vite
+# Demo: Salon Fryzjerski
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Działające demo strony dla salonu fryzjerskiego — zbudowane w React + TypeScript z Framer Motion.
 
-Currently, two official plugins are available:
+Część portfolio [Konrad Malinowski](https://malinowski.dev) — pokazuje, jak może wyglądać strona Twojej firmy.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+**Live demo:** https://konradxmalinowski.github.io/demo-fryzjer/
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Co pokazuje to demo
 
-## Expanding the ESLint configuration
+- Wieloetapowy system rezerwacji (wybór stylisty → usługa → termin → potwierdzenie)
+- Galeria realizacji w układzie masonry z lightboxem i filtrowaniem po kategorii
+- Karty stylistów z bio, specjalizacjami i ocenami
+- Karuzela opinii klientów
+- Blog o trendach i pielęgnacji włosów
+- Pełna responsywność — mobile-first
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **React 18** + TypeScript
+- **Framer Motion** — animacje przejść i mikrointerakcji
+- **Zustand** — zarządzanie stanem rezerwacji
+- **Tailwind CSS** — stylowanie
+- **Vite** — bundler
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Uruchomienie lokalne
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Aplikacja będzie dostępna pod http://localhost:5173
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Struktura
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+src/
+├── components/     # Komponenty UI
+├── pages/          # Strony (Home, Stylists, Gallery, Blog, Booking)
+├── store/          # Stan rezerwacji (Zustand)
+└── assets/         # Zdjęcia i ikony
+```
+
+## Zainteresowany podobną stroną?
+
+Napisz: [malinowski.konrad45@gmail.com](mailto:malinowski.konrad45@gmail.com)  
+Portfolio: [malinowski.dev](https://malinowski.dev)
