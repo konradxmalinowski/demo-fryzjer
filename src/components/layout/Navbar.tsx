@@ -81,7 +81,9 @@ export function Navbar() {
                 className={`text-sm font-medium transition-colors hover:text-[var(--color-gold)] ${
                   location.pathname === to
                     ? 'text-[var(--color-gold)]'
-                    : 'text-[var(--color-espresso)] dark:text-[var(--color-cream)]'
+                    : scrolled
+                    ? 'text-[var(--color-espresso)] dark:text-[var(--color-cream)]'
+                    : 'text-white/90'
                 }`}
               >
                 {label}
